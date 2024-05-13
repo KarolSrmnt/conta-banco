@@ -38,9 +38,8 @@ public class ContaTerminal {
 			numeroDaConta = input.nextInt();
 		}
 		
-		String dadosDaConta = "Olá " + nomeCompletoCliente
-				+ ", obrigado por criar uma conta em nosso banco, sua agência é " + agenciaBancaria + ", número "
-				+ numeroDaConta;
+		String dadosDaConta = "Olá ".concat(nomeCompletoCliente).concat(", obrigado por criar uma conta em nosso banco, sua agência é ")
+				.concat(agenciaBancaria).concat(", número ").concat(Integer.toString(numeroDaConta));
 
 		System.out.println("Deseja consultar o seu saldo? [s/n]");
 		if (input.next().equalsIgnoreCase("s")) {
