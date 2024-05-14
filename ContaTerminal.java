@@ -6,7 +6,7 @@ public class ContaTerminal {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in).useLocale(Locale.US);
-		double saldo = 237.48;
+		double saldo = 0.0;
 
 		System.out.println("Olá, seja bem-vindo(a/e) ao banco! \n");
 		
@@ -38,12 +38,22 @@ public class ContaTerminal {
 			numeroDaConta = input.nextInt();
 		}
 		
+		System.out.println("Deseja realizar um depósito? [s/n] ");
+		if(input.next().equalsIgnoreCase("s")) {
+			System.out.print("Valor a ser depositado R$");
+			saldo = input.nextDouble();
+		}
+		
 		String dadosDaConta = "Olá ".concat(nomeCompletoCliente).concat(", obrigado por criar uma conta em nosso banco, sua agência é ")
 				.concat(agenciaBancaria).concat(", número ").concat(Integer.toString(numeroDaConta));
 
 		System.out.println("Deseja consultar o seu saldo? [s/n]");
 		if (input.next().equalsIgnoreCase("s")) {
-			dadosDaConta += ", e seu saldo é R$" + saldo + ", já está disponível para saque";
+			if(saldo == 0) {
+				dadosDaConta += ", e seu saldo é R$".concat(Double.toString(saldo));
+			} else {
+				dadosDaConta += ", e seu saldo é R$".concat(Double.toString(saldo)).concat(", já está disponível para saque");
+			}
 		}
 		
 		System.out.println("----------");
