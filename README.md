@@ -11,7 +11,9 @@ agenciaBancaria | String
 nomeCompletoCliente | String
 saldo | double
 
-Posteriormente, o sistema pergunta se o usuário deseja consultar o saldo.
+Posteriormente, o sistema pergunta se o usuário deseja realizar um depósito.
+
+Por fim, é dada a escolha de consultar o saldo:
 1. Caso a resposta seja "n", é exibida a se mensagem:
 > "Olá `nomeCompletoCliente`, obrigado por criar uma conta em nosso banco, sua agência é `agenciaBancaria`, conta `numeroDaConta`".
 
